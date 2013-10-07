@@ -19,7 +19,7 @@ end
 gem 'sass-rails', '~> 4.0.0'
 
 # Use twitter bootstrap
-gem 'bootstrap-sass', '~>2.3.2.2'
+gem 'twitter-bootstrap-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
