@@ -1,0 +1,35 @@
+<h1>Listing proposals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Thought</th>
+      <th>Abstract</th>
+      <th>Description</th>
+      <th>Sponsored</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <tr>
+        <td><%= proposal.thought %></td>
+        <td><%= proposal.abstract %></td>
+        <td><%= proposal.description %></td>
+        <td><%= proposal.sponsored %></td>
+        <td><%= proposal.status %></td>
+        <td><%= link_to 'Show', proposal %></td>
+        <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+        <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Proposal', new_proposal_path %>

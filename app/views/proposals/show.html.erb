@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Thought:</strong>
+  <%= @proposal.thought %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @proposal.abstract %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @proposal.description %>
+</p>
+
+<p>
+  <strong>Sponsored:</strong>
+  <%= @proposal.sponsored %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @proposal.status %>
+</p>
+
+<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
+<%= link_to 'Back', proposals_path %>
