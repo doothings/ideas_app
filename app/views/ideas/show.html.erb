@@ -1,0 +1,38 @@
+<div class="row row-offcanvas row-offcanvas-right">
+  <div class="col-xs-12 col-sm-9">
+    <p class="pull-right visible-xs">
+      <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-8">
+        <p id="notice"><%= notice %></p>
+        <p>
+          <strong><%= @idea.title.titleize %></strong>
+          
+        </p>
+        <p>
+          <strong>Content:</strong>
+          <%= @idea.content %>
+        </p>
+        <p>
+          <% tag_counts = @idea.tag_counts %>
+          <% if tag_counts.length > 0 %>
+            <div class="tags">
+              <% unless tag_counts.length > 1 %>
+                <span class="label">Tag</span>
+              <% else %>
+                <span class="label">Tags</span>
+              <% end %>
+              <% tag_cloud tag_counts, %w[m] do |tag| %>
+                <span><%= link_to tag.name, tag_path(tag.name), :class => "tag label label-info" %></span>
+              <% end %>
+            </div>
+            <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <%= link_to 'Edit', edit_idea_path(@idea) %> |
+    <%= link_to 'Back', ideas_path %>
